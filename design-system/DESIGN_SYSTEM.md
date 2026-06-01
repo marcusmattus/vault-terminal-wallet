@@ -195,53 +195,31 @@ No emoji used anywhere in the product.
 
 ## File Index
 
+Paths are relative to the repo root.
+
 ```
-/
-├── README.md                     ← This file
-├── SKILL.md                      ← Agent skill descriptor
-├── colors_and_type.css           ← All CSS variables (colors, type, spacing)
-│
-├── assets/
+design-system/
+├── DESIGN_SYSTEM.md              ← This file
+└── colors_and_type.css           ← CSS variables (colors, type, spacing, glows)
+
+assets/
+├── brand/
 │   ├── logo-main.svg             ← Horizontal wordmark + symbol
 │   ├── logo-symbol.svg           ← Terminal T symbol only
-│   ├── logo-icon.svg             ← App icon (square)
-│   ├── logo-monochrome.svg       ← White/gray monochrome version
-│   └── icons/                   ← Custom SVG icon set
-│       ├── wallet.svg
-│       ├── send.svg
-│       ├── receive.svg
-│       ├── shield.svg
-│       ├── biometric.svg
-│       ├── vault.svg
-│       ├── network.svg
-│       ├── risk.svg
-│       ├── terminal.svg
-│       └── kyc.svg
-│
-├── preview/                      ← Design System tab cards
-│   ├── colors-primary.html
-│   ├── colors-semantic.html
-│   ├── colors-neutral.html
-│   ├── type-scale.html
-│   ├── type-specimens.html
-│   ├── spacing-tokens.html
-│   ├── shadows-glows.html
-│   ├── components-buttons.html
-│   ├── components-cards.html
-│   ├── components-inputs.html
-│   ├── components-badges.html
-│   ├── components-terminal.html
-│   ├── brand-logo.html
-│   └── brand-icons.html
-│
-└── ui_kits/
-    └── mobile-app/
-        ├── README.md
-        ├── index.html            ← Interactive mobile prototype
-        ├── TerminalBoot.jsx
-        ├── WalletDashboard.jsx
-        ├── SendCrypto.jsx
-        ├── KYCStatus.jsx
-        ├── SecurityCentre.jsx
-        └── components.jsx        ← Shared UI primitives
+│   └── logo-monochrome.svg       ← White/gray monochrome version
+└── icons/                        ← Custom SVG icon set
+    ├── wallet.svg
+    ├── send.svg
+    ├── receive.svg
+    ├── shield.svg
+    ├── biometric.svg
+    ├── vault.svg
+    ├── network.svg
+    ├── risk.svg
+    ├── terminal.svg
+    └── kyc.svg
 ```
+
+The JSX prototypes, HTML previews, and `SKILL.md` from the source design
+package are reference-only and intentionally not shipped in this repo —
+the React Native screens under `app/` are the canonical implementation.
