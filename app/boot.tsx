@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Animated } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { LogoMark, VaultButton, BlinkCursor, PromptLine } from '../components';
 import { Colors } from '../constants/colors';
@@ -32,6 +33,7 @@ const BrandLockup: React.FC<{ accent: string; brandTop: string; brandBottom: str
 );
 
 const ClassicBoot: React.FC<{ accent: string; onComplete: () => void }> = ({ accent, onComplete }) => {
+  const insets = useSafeAreaInsets();
   const [visible, setVisible] = useState<number[]>([]);
   const [showEnter, setShowEnter] = useState(false);
 
@@ -91,7 +93,7 @@ const ClassicBoot: React.FC<{ accent: string; onComplete: () => void }> = ({ acc
         )}
       </View>
       {showEnter && (
-        <View style={styles.enterSection}>
+        <View style={[styles.enterSection, { paddingBottom: 32 + insets.bottom }]}>
           <VaultButton onPress={onComplete}>ENTER VAULT</VaultButton>
           <Text style={styles.biometricHint}>BIOMETRIC AUTH REQUIRED</Text>
         </View>
@@ -101,6 +103,7 @@ const ClassicBoot: React.FC<{ accent: string; onComplete: () => void }> = ({ acc
 };
 
 const MinimalBoot: React.FC<{ accent: string; onComplete: () => void }> = ({ accent, onComplete }) => {
+  const insets = useSafeAreaInsets();
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -120,7 +123,7 @@ const MinimalBoot: React.FC<{ accent: string; onComplete: () => void }> = ({ acc
   const done = progress >= 100;
 
   return (
-    <View style={styles.minimalContainer}>
+    <View style={[styles.minimalContainer, { paddingBottom: 32 + insets.bottom }]}>
       <View style={{ marginBottom: 30 }}>
         <LogoMark accent={accent} size={108} />
       </View>

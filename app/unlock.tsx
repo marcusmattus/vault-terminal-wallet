@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Animated } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Path, Circle, Polyline, Line } from 'react-native-svg';
 import { useRouter } from 'expo-router';
 import { AppStatusBar, LogoMark, VaultButton } from '../components';
@@ -8,6 +9,7 @@ import { Colors } from '../constants/colors';
 
 export default function Unlock() {
   const router = useRouter();
+  const insets = useSafeAreaInsets();
   const { setUnlocked } = useAppStore();
   const [mode, setMode] = useState<'face' | 'pin'>('face');
   const [pin, setPin] = useState('');
@@ -138,7 +140,7 @@ export default function Unlock() {
 
       {/* Keypad */}
       {mode === 'pin' && (
-        <View style={styles.keypad}>
+        <View style={[styles.keypad, { paddingBottom: 28 + insets.bottom }]}>
           {keys.map((k, i) => {
             if (k === 'bio') {
               return (

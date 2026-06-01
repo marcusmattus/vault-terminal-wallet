@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
 import { Colors } from '../constants/colors';
 
@@ -7,9 +8,15 @@ interface StatusBarProps {
   time?: string;
 }
 
+// Content row is 30px tall; sits below the real device inset (notch / Dynamic Island).
+// Falls back to 12px on devices that report a 0 top inset (older phones, web).
+const STATUS_CONTENT = 30;
+
 export const AppStatusBar: React.FC<StatusBarProps> = ({ time = "09:41" }) => {
+  const insets = useSafeAreaInsets();
+  const topPad = Math.max(insets.top, 12);
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { height: topPad + STATUS_CONTENT, paddingTop: topPad }]}>
       <Text style={styles.time}>{time}</Text>
       <View style={styles.icons}>
         {/* Signal strength */}
@@ -38,8 +45,7 @@ export const AppStatusBar: React.FC<StatusBarProps> = ({ time = "09:41" }) => {
 
 const styles = StyleSheet.create({
   container: {
-    height: 44,
-    paddingTop: 14,
+    // height & paddingTop are applied inline from the real safe-area inset
     paddingLeft: 24,
     paddingRight: 24,
     flexDirection: 'row',

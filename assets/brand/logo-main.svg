@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 120" width="640" height="120">
+  <defs>
+    <filter id="glow-md">
+      <feGaussianBlur stdDeviation="4" result="blur"></feGaussianBlur>
+      <feMerge><feMergeNode in="blur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+    </filter>
+    <filter id="glow-text">
+      <feGaussianBlur stdDeviation="3" result="blur"></feGaussianBlur>
+      <feMerge><feMergeNode in="blur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+    </filter>
+    <clipPath id="iconClip">
+      <rect x="0" y="0" width="120" height="120" rx="14"></rect>
+    </clipPath>
+  </defs>
+
+  
+  <rect width="640" height="120" fill="#050505"></rect>
+
+  
+  <rect x="4" y="4" width="112" height="112" rx="12" fill="#050505"></rect>
+  <rect x="4" y="4" width="112" height="112" rx="12" fill="none" stroke="#00FF88" stroke-width="1.5" filter="url(#glow-md)" opacity="0.85"></rect>
+  <rect x="4" y="4" width="112" height="112" rx="12" fill="none" stroke="#00FF88" stroke-width="1"></rect>
+
+  
+  <line x1="4" y1="26" x2="116" y2="26" stroke="#00FF88" stroke-width="0.8" opacity="0.5"></line>
+  <text x="13" y="20" font-family="&#39;JetBrains Mono&#39;, monospace" font-size="9" fill="#00FF88" opacity="0.8">&gt;_</text>
+  <circle cx="95" cy="15" r="2.5" fill="#00FF88" opacity="0.6"></circle>
+  <circle cx="103" cy="15" r="2.5" fill="#00FF88" opacity="0.6"></circle>
+  <circle cx="111" cy="15" r="2.5" fill="#00FF88" opacity="0.6"></circle>
+
+  
+  
+  <rect x="18" y="33" width="84" height="22" fill="#001a0d"></rect>
+  
+  <rect x="48" y="55" width="24" height="55" fill="#001a0d"></rect>
+  
+  <polygon points="18,33 26,33 18,41" fill="#050505"></polygon>
+  <polygon points="102,33 94,33 102,41" fill="#050505"></polygon>
+  <polygon points="48,55 56,55 48,63" fill="#050505"></polygon>
+  <polygon points="72,55 64,55 72,63" fill="#050505"></polygon>
+  <polygon points="48,110 56,110 48,102" fill="#050505"></polygon>
+  <polygon points="72,110 64,110 72,102" fill="#050505"></polygon>
+
+  
+  <path d="M26,33 L94,33 L102,41 L72,41 L72,55 L64,55 L64,102 L72,102 L72,110 L48,110 L48,102 L56,102 L56,55 L48,55 L48,41 L18,41 Z" fill="none" stroke="#00FF88" stroke-width="2" filter="url(#glow-md)" opacity="0.9"></path>
+  <path d="M26,33 L94,33 L102,41 L72,41 L72,55 L64,55 L64,102 L72,102 L72,110 L48,110 L48,102 L56,102 L56,55 L48,55 L48,41 L18,41 Z" fill="none" stroke="#00FF88" stroke-width="1.2"></path>
+
+  
+  
+  <text x="140" y="52" font-family="&#39;Space Mono&#39;, monospace" font-size="30" fill="#00FF88" font-weight="700" letter-spacing="6" filter="url(#glow-text)">VAULT</text>
+  <text x="140" y="52" font-family="&#39;Space Mono&#39;, monospace" font-size="30" fill="#00FF88" font-weight="700" letter-spacing="6">VAULT</text>
+
+  <text x="140" y="82" font-family="&#39;Space Mono&#39;, monospace" font-size="30" fill="#FFFFFF" font-weight="400" letter-spacing="6">TERMINAL</text>
+
+  
+  <text x="141" y="104" font-family="&#39;JetBrains Mono&#39;, monospace" font-size="10" fill="#8B949E" letter-spacing="3">SECURE CRYPTO WALLET  ·  COMMAND-LINE GRADE</text>
+</svg>
