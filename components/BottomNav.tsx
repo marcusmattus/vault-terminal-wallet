@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Rect, Path, Polygon, Line, Polyline, Circle } from 'react-native-svg';
 import { Colors } from '../constants/colors';
 
@@ -38,6 +39,7 @@ const SecurityIcon: React.FC<{ color: string }> = ({ color }) => (
 );
 
 export const BottomNav: React.FC<BottomNavProps> = ({ active, onNavigate }) => {
+  const insets = useSafeAreaInsets();
   const tabs = [
     { id: 'wallet', label: 'WALLET', icon: WalletIcon },
     { id: 'send', label: 'SEND', icon: SendIcon },
@@ -46,7 +48,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({ active, onNavigate }) => {
   ];
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { height: 64 + insets.bottom, paddingBottom: 8 + insets.bottom }]}>
       {tabs.map(tab => {
         const isActive = active === tab.id;
         const IconComponent = tab.icon;
@@ -78,14 +80,13 @@ export const BottomNav: React.FC<BottomNavProps> = ({ active, onNavigate }) => {
 
 const styles = StyleSheet.create({
   container: {
-    height: 72,
+    // height & paddingBottom add the real home-indicator inset inline
     backgroundColor: Colors.bgSecondary,
     borderTopWidth: 1,
     borderTopColor: Colors.borderSubtle,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-    paddingBottom: 8,
     flexShrink: 0,
   },
   tab: {

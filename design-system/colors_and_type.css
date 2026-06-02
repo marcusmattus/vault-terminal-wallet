@@ -1,0 +1,324 @@
+/* ============================================================
+   VAULT TERMINAL WALLET — Design System Foundations
+   colors_and_type.css
+   ============================================================ */
+
+/* Google Fonts — monospace families */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* ============================================================
+   COLOR TOKENS
+   ============================================================ */
+
+:root {
+
+  /* --- Backgrounds --- */
+  --bg-primary:      #050505;   /* Main app background — pure black */
+  --bg-secondary:    #0D1117;   /* Cards, panels, surfaces */
+  --bg-elevated:     #161B22;   /* Modals, popovers, sheet overlays */
+  --bg-overlay:      rgba(5,5,5,0.85); /* Scrim / backdrop */
+
+  /* --- Terminal Green (primary brand) --- */
+  --green-primary:   #00FF88;   /* Active, CTAs, primary text highlights */
+  --green-secondary: #39FFB6;   /* Hover state, secondary highlights */
+  --green-dim:       #00994D;   /* Inactive, muted green elements */
+  --green-faint:     #003320;   /* Green tint surface (hover bg) */
+  --green-glow:      rgba(0, 255, 136, 0.35); /* Glow shadow */
+
+  /* --- Cyan Accent --- */
+  --cyan-accent:     #00D1FF;   /* Links, network, data streams */
+  --cyan-dim:        #006A82;   /* Inactive cyan */
+  --cyan-glow:       rgba(0, 209, 255, 0.3);
+
+  /* --- Status / Semantic --- */
+  --yellow-warning:  #FFCC00;   /* Warnings, BASIC_VERIFIED, pending */
+  --yellow-dim:      #7A6100;   /* Inactive warning */
+  --yellow-glow:     rgba(255, 204, 0, 0.4);
+
+  --red-danger:      #FF4D4D;   /* Errors, RESTRICTED, high-risk txns */
+  --red-dim:         #7A1F1F;   /* Inactive danger */
+  --red-glow:        rgba(255, 77, 77, 0.4);
+
+  --green-success:   #00FF88;   /* Success = green primary */
+
+  /* --- Borders --- */
+  --border-subtle:   #1F2937;   /* Default card/panel borders */
+  --border-dim:      #0F1823;   /* Ultra-subtle dividers */
+  --border-active:   #00FF88;   /* Focus / active border */
+  --border-warning:  #FFCC00;
+  --border-danger:   #FF4D4D;
+
+  /* --- Text --- */
+  --text-primary:    #00FF88;   /* Primary terminal text */
+  --text-secondary:  #FFFFFF;   /* High-contrast values, numbers */
+  --text-muted:      #8B949E;   /* Labels, secondary info */
+  --text-dim:        #3D4A5C;   /* Disabled, placeholders */
+  --text-prompt:     #00FF88;   /* > prompt character */
+  --text-cyan:       #00D1FF;   /* Links, addresses */
+  --text-warning:    #FFCC00;
+  --text-danger:     #FF4D4D;
+
+  /* --- Pure --- */
+  --white:           #FFFFFF;
+  --black:           #000000;
+
+  /* ============================================================
+     GLOW / SHADOW SYSTEM
+     ============================================================ */
+
+  --glow-green-sm:   0 0 6px rgba(0, 255, 136, 0.3);
+  --glow-green-md:   0 0 12px rgba(0, 255, 136, 0.4), 0 0 30px rgba(0, 255, 136, 0.15);
+  --glow-green-lg:   0 0 20px rgba(0, 255, 136, 0.5), 0 0 60px rgba(0, 255, 136, 0.2);
+  --glow-cyan-md:    0 0 12px rgba(0, 209, 255, 0.4), 0 0 30px rgba(0, 209, 255, 0.15);
+  --glow-yellow-md:  0 0 10px rgba(255, 204, 0, 0.45);
+  --glow-red-md:     0 0 10px rgba(255, 77, 77, 0.45);
+
+  /* Text glow */
+  --text-glow-green: 0 0 8px rgba(0, 255, 136, 0.7);
+  --text-glow-cyan:  0 0 8px rgba(0, 209, 255, 0.7);
+
+  /* ============================================================
+     BORDER RADIUS
+     ============================================================ */
+
+  --radius-none:   0px;
+  --radius-sm:     2px;    /* Badges, chips */
+  --radius-md:     4px;    /* Buttons, cards — terminal angular */
+  --radius-lg:     8px;    /* Sheet modals */
+  --radius-xl:     12px;   /* App icon, bottom sheet */
+  --radius-full:   9999px; /* Pill shapes (rare) */
+
+  /* ============================================================
+     SPACING SCALE (8px base)
+     ============================================================ */
+
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+
+  /* ============================================================
+     TYPOGRAPHY
+     ============================================================ */
+
+  /* Font families */
+  --font-mono:      'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  --font-display:   'Space Mono', 'Courier New', monospace;
+  --font-code:      'IBM Plex Mono', 'Courier New', monospace;
+  --font-ui:        system-ui, sans-serif;
+
+  /* Font sizes */
+  --text-xs:    10px;
+  --text-sm:    12px;
+  --text-base:  14px;
+  --text-md:    16px;
+  --text-lg:    18px;
+  --text-xl:    22px;
+  --text-2xl:   28px;
+  --text-3xl:   36px;
+  --text-4xl:   48px;
+
+  /* Line heights */
+  --leading-tight:   1.2;
+  --leading-normal:  1.5;
+  --leading-loose:   1.8;
+
+  /* Letter spacing */
+  --tracking-tight:  -0.02em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.08em;
+  --tracking-wider:   0.15em;
+  --tracking-widest:  0.25em;
+
+  /* Font weights */
+  --weight-light:     300;
+  --weight-regular:   400;
+  --weight-medium:    500;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+
+  /* ============================================================
+     SEMANTIC ROLES
+     ============================================================ */
+
+  /* Screen/section title — e.g. "WALLET DASHBOARD" */
+  --type-screen-title-font:    var(--font-display);
+  --type-screen-title-size:    var(--text-lg);
+  --type-screen-title-weight:  var(--weight-bold);
+  --type-screen-title-track:   var(--tracking-widest);
+  --type-screen-title-color:   var(--green-primary);
+  --type-screen-title-shadow:  var(--text-glow-green);
+
+  /* Balance / value display */
+  --type-value-font:    var(--font-mono);
+  --type-value-size:    var(--text-3xl);
+  --type-value-weight:  var(--weight-bold);
+  --type-value-track:   var(--tracking-tight);
+  --type-value-color:   var(--white);
+
+  /* Terminal prompt */
+  --type-prompt-font:    var(--font-mono);
+  --type-prompt-size:    var(--text-sm);
+  --type-prompt-weight:  var(--weight-regular);
+  --type-prompt-color:   var(--green-primary);
+  --type-prompt-track:   var(--tracking-normal);
+
+  /* System log line */
+  --type-log-font:    var(--font-mono);
+  --type-log-size:    var(--text-xs);
+  --type-log-weight:  var(--weight-regular);
+  --type-log-color:   var(--text-muted);
+
+  /* Card label */
+  --type-label-font:    var(--font-mono);
+  --type-label-size:    var(--text-xs);
+  --type-label-weight:  var(--weight-medium);
+  --type-label-track:   var(--tracking-widest);
+  --type-label-color:   var(--text-muted);
+
+  /* Crypto address / hash */
+  --type-address-font:    var(--font-code);
+  --type-address-size:    var(--text-sm);
+  --type-address-weight:  var(--weight-regular);
+  --type-address-color:   var(--cyan-accent);
+
+  /* Button text */
+  --type-button-font:    var(--font-mono);
+  --type-button-size:    var(--text-sm);
+  --type-button-weight:  var(--weight-bold);
+  --type-button-track:   var(--tracking-wider);
+
+}
+
+/* ============================================================
+   SEMANTIC ELEMENT DEFAULTS
+   ============================================================ */
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-widest);
+  color: var(--green-primary);
+  text-shadow: var(--text-glow-green);
+  text-transform: uppercase;
+  line-height: var(--leading-tight);
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  color: var(--green-primary);
+  text-transform: uppercase;
+  line-height: var(--leading-tight);
+}
+
+h3, .h3 {
+  font-family: var(--font-mono);
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+h4, .h4 {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+p, .body {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  color: var(--text-muted);
+  line-height: var(--leading-loose);
+}
+
+code, .code, pre {
+  font-family: var(--font-code);
+  font-size: var(--text-sm);
+  color: var(--cyan-accent);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 2px 6px;
+}
+
+/* Terminal prompt line */
+.prompt::before {
+  content: '> ';
+  color: var(--green-primary);
+  font-weight: var(--weight-bold);
+}
+
+/* Blinking cursor */
+.cursor::after {
+  content: '_';
+  animation: blink 600ms step-end infinite;
+  color: var(--green-primary);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Scanline overlay */
+.scanlines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.04) 2px,
+    rgba(0, 0, 0, 0.04) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Address / hash display */
+.address {
+  font-family: var(--font-code);
+  font-size: var(--text-sm);
+  color: var(--cyan-accent);
+  word-break: break-all;
+}
+
+/* KYC status badges */
+.kyc-unverified  { color: var(--text-muted);    border-color: var(--border-subtle); }
+.kyc-basic       { color: var(--yellow-warning); border-color: var(--yellow-warning); }
+.kyc-full        { color: var(--green-primary);  border-color: var(--green-primary); }
+.kyc-restricted  { color: var(--yellow-warning); border-color: var(--yellow-warning); }
+.kyc-suspended   { color: var(--red-danger);     border-color: var(--red-danger); }
+
+/* Risk score colors */
+.risk-low     { color: var(--green-primary); }
+.risk-medium  { color: var(--yellow-warning); }
+.risk-high    { color: var(--red-danger); }
